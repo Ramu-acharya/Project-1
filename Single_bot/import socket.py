@@ -1,4 +1,6 @@
 import socket
+import time
+commands = ["F", "B", "L", "R"]  # List of commands to alternate
 
 # Set the IP address and port on which the laptop server will listen
 host = '0.0.0.0'  # Listen on all available interfaces
@@ -25,9 +27,10 @@ while True:
         break
     print(f"Received from client: {data.decode()}")
 
-    # Send a response back to the client
-    response = input("Enter your response: ")
-    client_socket.sendall(response.encode())
+    # Send "F" and then "B" alternatively every 1 second
+    for command in commands:
+        client_socket.sendall(command.encode())
+        time.sleep(2)  # Adjust the sleep duration if needed
 # Close the connection
 client_socket.close()
 server_socket.close()

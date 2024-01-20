@@ -1,9 +1,11 @@
 #include <ESP8266WiFi.h>
 char command;
-const char* ssid = "robotics_2";       // Replace with your local Wi-Fi network name
-const char* password = "CLB422BFB0"; // Replace with your local Wi-Fi password
+const char* ssid = "khadgisujan";       // Replace with your local Wi-Fi network name
+const char* password = "CLB279EF91"; // Replace with your local Wi-Fi password
 const char* server_ip = "192.168.1.80";   // Replace with your laptop's IP address
 const int server_port = 5000;        // Choose a port number
+unsigned long previous_time = 0;
+int time_duration = 500;
 
 WiFiClient client;
 
@@ -47,8 +49,10 @@ void setup() {
 
 
 void loop() {
-
+  // if(millis()- previous_time>500){
+    // previous_time = millis();
   client.print("Hello Server!");
+  // }
   // // Wait for a response from the server
   while (client.available() > 0) {
     command = client.read();
