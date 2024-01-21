@@ -2,19 +2,19 @@
 char command;
 const char* ssid = "khadgisujan";       // Replace with your local Wi-Fi network name
 const char* password = "CLB279EF91"; // Replace with your local Wi-Fi password
-const char* server_ip = "192.168.1.80";   // Replace with your laptop's IP address
+const char* server_ip = "192.168.1.84";   // Replace with your laptop's IP address
 const int server_port = 5000;        // Choose a port number
-unsigned long previous_time = 0;
-int time_duration = 500;
+// unsigned long previous_time = 0;
+// int time_duration = 500;
 
 WiFiClient client;
 
-#define IN_1 5          // L298N in1 motors Right           
-#define IN_2 4          // L298N in2 motors Right          
-#define IN_3 0           // L298N in3 motors Left          
-#define IN_4 12           // L298N in4 motors Left 
-#define ena1 13
-#define ena2 15
+#define IN_1 5   //D1       // L298N in1 motors Right           
+#define IN_2 4   //D2       // L298N in2 motors Right          
+#define IN_3 0   //D3        // L298N in3 motors Left          
+#define IN_4 12  //D6         // L298N in4 motors Left 
+#define ena1 13  //D7
+#define ena2 15  //D8
 
 
 void setup() {

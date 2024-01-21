@@ -4,7 +4,7 @@ commands = ["F", "B", "L", "R"]  # List of commands to alternate
 
 # Set the IP address and port on which the laptop server will listen
 host = '0.0.0.0'  # Listen on all available interfaces
-port = 1111 #change if not working.
+port = 5000 #change if not working.
 
 # Create a socket object
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
