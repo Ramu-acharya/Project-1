@@ -15,16 +15,22 @@ def calculate_commands(coordinates):
 
         # Move forward
         if x_distance > 0:
-            movement_commands.extend(["F"] * (x_distance // 200))  # Add forward commands
-            time.sleep(2 * (x_distance // 200))  # Sleep to simulate movement time
+            user_input = input(f"Move {x_distance} units forward? (Y/N): ")
+            if user_input.upper() == "Y":
+                movement_commands.extend(["F"] * (x_distance // 200))  # Add forward commands
+                time.sleep(2 * (x_distance // 200))  # Sleep to simulate movement time
 
         # Turn right or left
         if y_distance > 0:
-            movement_commands.extend(["R"] * (y_distance // 200))  # Add right turn commands
-            time.sleep(4 * (y_distance // 200))  # Sleep to simulate turn time
+            user_input = input(f"Turn {y_distance} units right? (Y/N): ")
+            if user_input.upper() == "Y":
+                movement_commands.extend(["R"] * (y_distance // 200))  # Add right turn commands
+                time.sleep(4 * (y_distance // 200))  # Sleep to simulate turn time
         elif y_distance < 0:
-            movement_commands.extend(["L"] * (-y_distance // 200))  # Add left turn commands
-            time.sleep(4 * (-y_distance // 200))  # Sleep to simulate turn time
+            user_input = input(f"Turn {-y_distance} units left? (Y/N): ")
+            if user_input.upper() == "Y":
+                movement_commands.extend(["L"] * (-y_distance // 200))  # Add left turn commands
+                time.sleep(4 * (-y_distance // 200))  # Sleep to simulate turn time
 
         # Update the current position
         current_position = (x, y)

@@ -3,10 +3,6 @@ import time
 from Move_Direction import calculate_commands
 from A_star import assign_coordinates
 
-# Set the IP address and port on which the laptop server will listen
-host = '0.0.0.0'  # Listen on all available interfaces
-port = 5000  # Change if not working.
-
 def establish_connection(host, port):
     # Set the IP address and port on which the laptop server will listen
     # Listen on all available interfaces
@@ -29,6 +25,10 @@ def establish_connection(host, port):
 
 # Given coordinates
 coordinates = assign_coordinates()
+
+# Set the IP address and port on which the laptop server will listen
+host = '0.0.0.0'  # Listen on all available interfaces
+port = 5000  # Change if not working.
 
 # Create and establish a connection
 server_socket, client_socket = establish_connection(host, port)
